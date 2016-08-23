@@ -1,0 +1,16 @@
+*.opensdf
+*.obj
+Debug/*
+Release/*
+*.sdf
+*.suo
+*.obj
+*.png
+*.jpg
+*.tif
+*.tiff
+algo_test/Debug/*
+algo_test/Release/*
+ipch/*
+*.txt
+*.db
