@@ -18,9 +18,18 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="cjson.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="thread_maker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cJSON.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,16 +5,50 @@
 #include <chrono>
 #include <memory>
 #include "thread_maker.h"
+//#include "pipe.h"
 
 using namespace std;
 
 void test_remove_if();
 void test_thread();
 
+// OBJECT from TEMPLATE function!
+// Template as first-class citizen
+#define define_functor_type(func_name) class tfn_##func_name {\
+public: template <typename... Args> auto operator()(Args&&... args) const ->decltype(func_name(std::forward<Args>(args)...))\
+{ return func_name(std::forward<Args>(args)...); } }
+
+//#define make_globle_functor(NAME,F) auto NAME=define_functor_type(F)
+
+int add(int a, int b)
+{
+	return a + b;
+}
+
+int add_one(int a)
+{
+	return 1 + a;
+}
+
+//make_globle_functor(tfn_add,add);
+
+define_functor_type(add);
+define_functor_type(add_one);
+
+int test(tfn_add add_functor, int a, int b)
+{
+	return add_functor(a, b) + 1;
+}
+
 int main()
 {
 	//test_remove_if();
-	test_thread();
+	//test_thread();
+	tfn_add add_functor;
+	tfn_add_one add_one_functor;
+	cout << "add_functor " << add_functor(1, 2) << endl; //result is 3
+	cout << "add_one_functor " << add_one_functor(5) << endl;
+	cout << "test " << test(add_functor ,5, 5) << endl;
 	return 1;
 }
 
