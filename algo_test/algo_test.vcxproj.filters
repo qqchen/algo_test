@@ -21,6 +21,15 @@
     <ClCompile Include="cjson.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="third\jsoncpp\lib_json\json_reader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="third\jsoncpp\lib_json\json_value.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="third\jsoncpp\lib_json\json_writer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="thread_maker.h">
@@ -32,5 +41,49 @@
     <ClInclude Include="cJSON.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\allocator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\assertions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\autolink.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\features.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\forwards.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\json.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\reader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\value.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\version.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\include\json\writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\jsoncpp\lib_json\json_tool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="third\jsoncpp\lib_json\json_valueiterator.inl">
+      <Filter>头文件</Filter>
+    </None>
   </ItemGroup>
 </Project>

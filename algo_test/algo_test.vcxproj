@@ -52,6 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./third/jsoncpp/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -67,6 +68,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./third/jsoncpp/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -78,11 +80,30 @@
   <ItemGroup>
     <ClCompile Include="cjson.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="third\jsoncpp\lib_json\json_reader.cpp" />
+    <ClCompile Include="third\jsoncpp\lib_json\json_value.cpp" />
+    <ClCompile Include="third\jsoncpp\lib_json\json_writer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cJSON.h" />
+    <ClInclude Include="JsonObject.h" />
     <ClInclude Include="pipe.h" />
+    <ClInclude Include="third\jsoncpp\include\json\allocator.h" />
+    <ClInclude Include="third\jsoncpp\include\json\assertions.h" />
+    <ClInclude Include="third\jsoncpp\include\json\autolink.h" />
+    <ClInclude Include="third\jsoncpp\include\json\config.h" />
+    <ClInclude Include="third\jsoncpp\include\json\features.h" />
+    <ClInclude Include="third\jsoncpp\include\json\forwards.h" />
+    <ClInclude Include="third\jsoncpp\include\json\json.h" />
+    <ClInclude Include="third\jsoncpp\include\json\reader.h" />
+    <ClInclude Include="third\jsoncpp\include\json\value.h" />
+    <ClInclude Include="third\jsoncpp\include\json\version.h" />
+    <ClInclude Include="third\jsoncpp\include\json\writer.h" />
+    <ClInclude Include="third\jsoncpp\lib_json\json_tool.h" />
     <ClInclude Include="thread_maker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="third\jsoncpp\lib_json\json_valueiterator.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

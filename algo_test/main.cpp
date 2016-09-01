@@ -6,11 +6,13 @@
 #include <memory>
 #include "thread_maker.h"
 //#include "pipe.h"
+#include "cJSON.h"
 
 using namespace std;
 
 void test_remove_if();
 void test_thread();
+void test_cjson();
 
 // OBJECT from TEMPLATE function!
 // Template as first-class citizen
@@ -44,11 +46,14 @@ int main()
 {
 	//test_remove_if();
 	//test_thread();
-	tfn_add add_functor;
-	tfn_add_one add_one_functor;
-	cout << "add_functor " << add_functor(1, 2) << endl; //result is 3
-	cout << "add_one_functor " << add_one_functor(5) << endl;
-	cout << "test " << test(add_functor ,5, 5) << endl;
+	//tfn_add add_functor;
+	//tfn_add_one add_one_functor;
+	//cout << "add_functor " << add_functor(1, 2) << endl; //result is 3
+	//cout << "add_one_functor " << add_one_functor(5) << endl;
+	//cout << "test " << test(add_functor ,5, 5) << endl;
+
+	test_cjson();
+
 	return 1;
 }
 
@@ -149,4 +154,9 @@ void test_thread()
 		}
 		cout << endl;
 	}
+}
+
+void test_cjson()
+{
+
 }
