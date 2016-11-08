@@ -7,12 +7,14 @@
 #include "thread_maker.h"
 //#include "pipe.h"
 #include "cJSON.h"
+#include <glog/logging.h>
 
 using namespace std;
 
 void test_remove_if();
 void test_thread();
 void test_cjson();
+void test_glog(const char* argv);
 
 // OBJECT from TEMPLATE function!
 // Template as first-class citizen
@@ -42,7 +44,7 @@ int test(tfn_add add_functor, int a, int b)
 	return add_functor(a, b) + 1;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
 	//test_remove_if();
 	//test_thread();
@@ -52,7 +54,9 @@ int main()
 	//cout << "add_one_functor " << add_one_functor(5) << endl;
 	//cout << "test " << test(add_functor ,5, 5) << endl;
 
-	test_cjson();
+	//test_cjson();
+
+	test_glog(argv[0]);
 
 	return 1;
 }
@@ -159,4 +163,21 @@ void test_thread()
 void test_cjson()
 {
 
+}
+
+void test_glog(const char* argv)
+{
+	google::InitGoogleLogging(argv);
+	//FLAGS_stderrthreshold = google::INFO;
+	FLAGS_colorlogtostderr = true;
+	google::SetLogDestination(google::GLOG_INFO, "./myInfo");
+	for (int i = 1; i <= 100; i++)
+	{
+		LOG_IF(WARNING, i == 100) << "LOG_IF(INFO,i==100)  google::COUNTER=" << google::COUNTER << "  i=" << i;
+		//LOG_EVERY_N(INFO, 10) << "LOG_EVERY_N(INFO,10)  google::COUNTER=" << google::COUNTER << "  i=" << i;
+		//LOG_IF_EVERY_N(WARNING, (i > 50), 10) << "LOG_IF_EVERY_N(INFO,(i>50),10)  google::COUNTER=" << google::COUNTER << "  i=" << i;
+		//LOG_FIRST_N(ERROR, 5) << "LOG_FIRST_N(INFO,5)  google::COUNTER=" << google::COUNTER << "  i=" << i;
+		LOG(INFO) << "COUNTER i = " << i << endl;
+	}
+	google::ShutdownGoogleLogging();
 }

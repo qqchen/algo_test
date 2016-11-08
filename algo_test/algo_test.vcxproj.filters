@@ -80,6 +80,21 @@
     <ClInclude Include="JsonObject.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="third\glog\log_severity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\glog\logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\glog\raw_logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\glog\stl_logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third\glog\vlog_is_on.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="third\jsoncpp\lib_json\json_valueiterator.inl">
